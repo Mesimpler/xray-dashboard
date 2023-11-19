@@ -1,5 +1,6 @@
 # xray-dashboard
-a .sh script to easy read xray statistics info.
+a .sh script to easy read xray statistics info.  
+xray version 1.8.4
 
 ## usage
 1. copy or download xray-dashboard.sh to you device.
