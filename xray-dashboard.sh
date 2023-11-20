@@ -8,8 +8,8 @@ print_traffic_info() {
     local uplink=$(echo "$data" | jq --arg name "$name" -r '.stat[] | select(.name | test($name + ".*uplink")) | .value')
     local downlink=$(echo "$data" | jq --arg name "$name" -r '.stat[] | select(.name | test($name + ".*downlink")) | .value')
 
-    local uplink_gb=$(awk "BEGIN { printf \"%.2f\", $uplink / 1024 / 1024 }")  
-    local downlink_gb=$(awk "BEGIN { printf \"%.2f\", $downlink / 1024 / 1024 }")
+    local uplink_gb=$(awk "BEGIN { printf \"%.2f\", $uplink / 1024 / 1024 / 1024}")  
+    local downlink_gb=$(awk "BEGIN { printf \"%.2f\", $downlink / 1024 / 1024 / 1024}")
 
     echo -e "$name \t 上传流量: $uplink_gb G"
     echo -e "$name \t 下载流量: $downlink_gb G"
